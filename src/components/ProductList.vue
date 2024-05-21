@@ -1,4 +1,6 @@
 <script setup>
+import ProductCard from "./ProductCard.vue";
+
 const products = [
   {
     id: 112341234,
@@ -16,19 +18,25 @@ const products = [
     id: 345345345,
     name: "Teclado",
     price: 30,
-    isForSale: true
-  }
+    isForSale: true,
+  },
 ];
 </script>
 
 <template>
   <h2>Productos:</h2>
-  <ul>
+  <ul class="product-list">
     <li v-for="(product, index) in products" :key="product.id">
-      <h3>{{ index + 1 }} - {{ product.name }}</h3>
-      <p>{{ product.price }}</p>
+      <ProductCard :index="index" :product="product"></ProductCard>
     </li>
   </ul>
 </template>
 
-<style></style>
+<style>
+.product-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+</style>
