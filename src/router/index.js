@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProductsView from '../views/ProductsView.vue'
 import ContentView from '../views/ContentView.vue'
 import UserFormView from '../views/UserFormView.vue'
+import PhotoView from '../views/PhotoView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/user-form',
       name: 'user-form',
       component: UserFormView
+    },
+    {
+      path: '/foto/:id',
+      name: 'foto',
+      component: PhotoView
     },
   ]
 })
